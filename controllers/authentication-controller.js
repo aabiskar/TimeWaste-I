@@ -1,0 +1,26 @@
+var mongoose = require('mongoose');
+var User = require('../datasets/user');
+
+module.exports.signup = function(req,res) {
+	//console.log(req.body);
+	var user = new User(req.body);
+	user.save();
+	res.json(req.body);
+}
+
+module.exports.login = function(req,res) {
+	User.find(req.body,function(err,results) {
+		//console.log(req.body);
+		if(err){
+			console.log("Error Out");
+		}
+
+		if(results && results.length ===1){
+			res.json(req.body.email);
+			console.log(req.body.email);
+		}
+		else{
+			console.log("Sorry not found on Database");
+		}
+	})
+}

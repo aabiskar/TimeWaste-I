@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TimeWaste">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src = "node_modules/angular/angular.min.js"></script>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="app/css/main.css">
+
+</head>
+<!-- <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script> -->
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationController">
+		<div class = "container">
+			<div>Email <input type="text" ng-model="login.email"> Password  <input type="password" ng-model="login.password"><button button type="button" class="btn btn-primary btn-sm" ng-click="logUserIn()">Login</button> <a ui-sref="signUp">Create an Account</a></div>
+		</div>
+	</nav>
+
+<body>
+    <div ui-view></div>
+</body>
+
+<!-- Latest Jquery-->
+<script src="node_modules/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+<script src = "app/app.js"></script>
+<script src="app/signup/signup-controller.js"></script>
+<script src="app/navigation/navigation-controller.js"></script>
+
+</html>
