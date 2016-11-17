@@ -14,10 +14,14 @@ module.exports.login = function(req,res) {
 		if(err){
 			console.log("Error Out");
 		}
+		//console.log("Data in results::" + results);
+		//console.log("result length::"+results.length);
 
-		if(results && results.length ===1){
-			res.json(req.body.email);
-			console.log(req.body.email);
+		if(results && results.length ===1){ //User.find returns an array.It can return multiple matches inside that array.  Your function is ensuring that there was only 1 match in the result
+				var userData = results[0];
+				//console.log(userData);
+				res.json({email:req.body.email,_id:userData._id});
+			//console.log(req.body.email);
 		}
 		else{
 			console.log("Sorry not found on Database");

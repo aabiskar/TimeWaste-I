@@ -11,7 +11,8 @@
 <!-- <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script> -->
     <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationController">
 		<div class = "container">
-			<div>Email <input type="text" ng-model="login.email"> Password  <input type="password" ng-model="login.password"><button button type="button" class="btn btn-primary btn-sm" ng-click="logUserIn()">Login</button> <a ui-sref="signUp">Create an Account</a></div>
+			<div ng-show = "!loggedIn">Email <input type="text" ng-model="login.email"> Password  <input type="password" ng-model="login.password"><button button type="button" class="btn btn-primary btn-sm" ng-click="logUserIn()">Login</button> <a ui-sref="signUp">Create an Account</a></div>
+			<div ng-show = "loggedIn"><a ui-sref="editProfile">Edit Profile</a></div>
 		</div>
 	</nav>
 
@@ -28,5 +29,11 @@
 <script src = "app/app.js"></script>
 <script src="app/signup/signup-controller.js"></script>
 <script src="app/navigation/navigation-controller.js"></script>
+<script src="app/profile/edit-profile-controller.js"></script>
+
+<!--Libraries -->
+<script src= "node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+<script src= "node_modules/ng-file-upload/dist/ng-file-upload-all.js"></script>
+<script src= "node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
 
 </html>
